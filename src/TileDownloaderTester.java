@@ -8,10 +8,19 @@ public class TileDownloaderTester {
 	/**
 	 * Configuration variables.
 	 */
-	private final static String tileService = "https://a.tiles.mapbox.com/v3/foursquare.meku766r";
+	
+	/*
+	 * Tile services :
+	 * http://b.tile.openstreetmap.org
+	 * https://a.tiles.mapbox.com/v3/foursquare.meku766r
+	 * 
+	 * TODO : Add Url Pattern Support : {z}/{x}/{y}.png 
+	 */
+	
+	private final static String tileService = "http://b.tile.openstreetmap.org";
 	private final static String destPath = "C:/osm_tiles";
 	private final static int zoomStart = 0;
-	private final static int zoomEnd = 2;
+	private final static int zoomEnd = 6;
 	
 	public static void main(String[] args) {
 		TileDownloaderTester tileDownloaderTester = new TileDownloaderTester();
@@ -134,7 +143,7 @@ public class TileDownloaderTester {
 				if(totalXDirectoryNum / numberOfThread > 1){
 					xStart += totalXDirectoryNum / numberOfThread;
 				}else{
-					//Aktif zoom da devam etmemesi için..
+					//Don't continue..
 					xStart = totalXDirectoryNum;	
 				}
 			}
