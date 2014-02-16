@@ -10,7 +10,9 @@ Single thread performance test result :
 ==============ZOOM 5-5==============
 
 Time : 263461 ms
+
 Img Count : 1024
+
 Avg : 257 ms
 
 
@@ -19,18 +21,24 @@ Multi thread performance test results :
 ==============ZOOM 5-5==============
 
 Time : 15823 ms
+
 Img Count : 1024
+
 Avg : 15 ms
 
 ==============ZOOM 6-6==============
 
 Time : 37588 ms
+
 Img Count : 4096
+
 Avg : 9 ms
 
 ==============ZOOM 0-8==============
 
 Time : 944767 ms
+
 Img Count : 87381
+
 Avg : 10 ms
 
