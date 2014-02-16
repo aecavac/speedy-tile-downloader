@@ -3,17 +3,17 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Tile Downloader Tester
+ * Tile Downloader Manager class.
  * 
  * @author aecavac
  *
  */
-public class TileDownloaderTester {
+public class TileDownloaderManager {
 	
 	/**
 	 * Configuration variables.
 	 * 
-	 * Tile services :
+	 * Ex. Tile services :
 	 * http://b.tile.openstreetmap.org
 	 * https://a.tiles.mapbox.com/v3/foursquare.meku766r
 	 * 
@@ -25,16 +25,21 @@ public class TileDownloaderTester {
 	private final static int zoomStart = 0;
 	private final static int zoomEnd = 6;
 	
+	/**
+	 * Main method to run application.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		TileDownloaderTester tileDownloaderTester = new TileDownloaderTester();
-		//tileDownloaderTester.testSingleThread(tileService, destPath, zoomStart, zoomEnd);
-		tileDownloaderTester.testMultiThread(tileService, destPath, zoomStart, zoomEnd);
+		TileDownloaderManager tileDownloaderManager = new TileDownloaderManager();
+		//tileDownloaderManager.downloadTilesSingleThread(tileService, destPath, zoomStart, zoomEnd);
+		tileDownloaderManager.downloadTilesMultiThread(tileService, destPath, zoomStart, zoomEnd);
 	}
 	
 	/**
-	 * Single Thread Test
+	 * Single Thread Tile Download
 	 */	
-	private void testSingleThread(int zStart, int zEnd) {
+	private void downloadTilesSingleThread(int zStart, int zEnd) {
 		
 		int zoomStart = zStart;
 		int zoomEnd = zEnd;
@@ -76,7 +81,7 @@ public class TileDownloaderTester {
 	}
 	
 	/**
-	 * Multi Thread Test
+	 * Multi Thread Tile Download
 	 * 
 	 * ZOOM : 0, 1, 2 	Thd : 1
 	 * ZOOM : 3 		Thd : 3 ( 2^3/2 -1 )
@@ -84,7 +89,7 @@ public class TileDownloaderTester {
 	 * ZOOM : 5 		Thd : 15( 2^5/2 -1 )
 	 * ZOOM : X >= 6	Thd : 32
 	 */
-	private void testMultiThread(final String tileService, final String destPath, int zStart, int zEnd) {
+	private void downloadTilesMultiThread(final String tileService, final String destPath, int zStart, int zEnd) {
 		
 		int zoomStart = zStart;
 		int zoomEnd = zEnd;

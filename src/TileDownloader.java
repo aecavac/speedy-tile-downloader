@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
 /**
  * TMS tile downloader thread class. 
  * 
- * @author ali.cavac
+ * @author aecavac
  *
  */
 public class TileDownloader implements Runnable {
