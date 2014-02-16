@@ -2,14 +2,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+/**
+ * Tile Downloader Tester
+ * 
+ * @author aecavac
+ *
+ */
 public class TileDownloaderTester {
 	
 	/**
 	 * Configuration variables.
-	 */
-	
-	/*
+	 * 
 	 * Tile services :
 	 * http://b.tile.openstreetmap.org
 	 * https://a.tiles.mapbox.com/v3/foursquare.meku766r
@@ -150,14 +153,13 @@ public class TileDownloaderTester {
 			
 			//Wait threads
 			System.out.println("List size : " + threads.size());
-			for (int i = 0; i < threads.size(); i++)
-		    {
+			for (int i = 0; i < threads.size(); i++){
 				try {
 					((Thread)threads.get(i)).join();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-		    }
+		    	}
 			
 			System.out.println("---Clear Thread List---");
 			threads.clear();
